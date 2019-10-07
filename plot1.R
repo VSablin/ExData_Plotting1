@@ -13,6 +13,8 @@ data_new <- data[which(data$Date>="2007-02-01 CET" & data$Date<="2007-02-02 CET"
 #I set the graphic device as png
 png(filename = "plot1.png")
 
+#I don't check whether there're "?" values, as the plot function can still work. It just ignores that value. The same applies to the other scripts
+
 #I create the histogram with the corresponding characteristics (color, title, labels, and breaks)
 #Note that the default values for the width and height are 480 pixels
 #I choose breaks=15 because that's the number of boxes of the shown plot
