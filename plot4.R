@@ -2,19 +2,19 @@
 #as a function of time between Thursday at 00:00:00 and Saturday at 00:00:00
 
 #I store "house_hold..." in data
-#data <- read.table("household_power_consumption.txt",sep=";",header = TRUE)
+data <- read.table("household_power_consumption.txt",sep=";",header = TRUE)
 
 #I transform the dates to date format
 #I choose tz="CET" because the data where taken in Paris, France (source: https://archive.ics.uci.edu/ml/datasets/individual+household+electric+power+consumption)
-#data$Date <- strptime(data$Date,format = "%d/%m/%Y",tz="CET")
+data$Date <- strptime(data$Date,format = "%d/%m/%Y",tz="CET")
 
 #I subset the values of data frame with dates between 2007-02-01 and 2007-02-02
-#data_new <- data[which(data$Date>="2007-02-01 CET" & data$Date<="2007-02-02 CET"),]
+data_new <- data[which(data$Date>="2007-02-01 CET" & data$Date<="2007-02-02 CET"),]
 
 #I set the graphic device as png
 png(filename = "plot4.png")
 
-#I generate a 2x2 lattice of plots. I also set the margins so that there's enough space for the plots
+#I generate a 2x2 lattice of plots. I also set the margins so that there's enough space for the plots and such that each plot is rectangular (similar to that in the assignment)
 par(mfrow=c(2,2),mar=c(4,4,5,2))
 
 #I generate the Global_active_power plot (which is actually plot2.png)
